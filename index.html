@@ -44,7 +44,7 @@
           left: 50px;
           top: 50px;
           width: 700px;
-          height: 200px;
+          height: 300px;
           overflow-y: scroll;
         }
 
@@ -66,7 +66,8 @@
 
         #box1 {
           /* top: 1000px; */
-          height: 200px;
+          height: 300px;
+          /*height: 400px;*/
         }
 
         #box2 {
@@ -150,12 +151,13 @@
         // since there will be so many of them (for each percentage
         // point).
 
+        // P.S 如果 child element height > root element height 會無法觸發 1(100%)
         let thresholdSets = [
           // [],
           // [0.5],
           // [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
           // [0, 0.25, 0.5, 0.75, 1.0]
-          [0, 0.25, 0.75, 1],
+          [0.25, 0.75, 1],
         ];
 
         // for (let i=0; i<=1.0; i+= 0.01) {
@@ -190,6 +192,7 @@
           box.querySelector(".bottomLeft").innerHTML = visiblePct;
           box.querySelector(".bottomRight").innerHTML = visiblePct;
           if (entry.intersectionRatio * 100 > 0) {
+            console.log(`碰到 threshold 了!!! (${visiblePct})`);
             box.querySelector("p").innerHTML = '我入場了!!!'
           } else {
             box.querySelector("p").innerHTML = ''
