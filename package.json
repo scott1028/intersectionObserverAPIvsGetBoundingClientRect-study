@@ -1,0 +1,12 @@
+{
+  "name": "intersectionObserverAPIvsGetBoundingClientRect-study",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "scott1028 <mic1028002@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "start": "http-server ./"
+  }}
